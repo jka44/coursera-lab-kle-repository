@@ -1,4 +1,5 @@
-let userRole = "admin"; 
+//exercice 
+/**let userRole = "admin"; 
 let accessLevel;
 
 if (userRole === "admin") {
@@ -50,3 +51,42 @@ let isAuthenticated = true;
 let authenticationStatus = isAuthenticated ? "Authenticated" : "Not authenticated";
 
 console.log ("Authentication Status =", authenticationStatus);
+
+**/
+
+//practice task 
+
+
+
+const userRoleSelect= document.getElementById("userRole");
+const response = document.getElementById("response");
+
+userRoleSelect.addEventListener("change", (e) => 
+{
+    let servicesAvailable;
+    const role = e.target.value;
+
+    switch (role) {
+        case "Employee":
+            servicesAvailable = "Full access to Dietary Services"
+            break;
+        case "Enrolled Member":
+            servicesAvailable = "Dietary Services & 1/1 interaction with a dietician"
+            break;
+        case "Subscriber":
+            servicesAvailable = "partial access to Dietaty Services only"
+            break;
+        case "Non-Subscriber":
+            servicesAvailable = "No service available, please enroll"
+            break;
+        default:
+            servicesAvailable = "Unknown"
+        break;
+    }
+    response.innerText=servicesAvailable;
+});
+
+
+
+
+
